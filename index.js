@@ -27,17 +27,17 @@ mongoose
     .then(() => console.log('MongoDB Connected'))
     .catch(err => console.log(err));
 
-app.use("/public", express.static(path.join(__dirname, 'public')));
+// app.use("/public", express.static(path.join(__dirname, 'public')));
 
 // initialising directories
-if (!fs.existsSync("./public")) {
-    fs.mkdirSync("./public");
+if (!fs.existsSync("./tmp")) {
+    fs.mkdirSync("./tmp");
 }
-if (!fs.existsSync("./public/resume")) {
-    fs.mkdirSync("./public/resume");
+if (!fs.existsSync("./tmp/resume")) {
+    fs.mkdirSync("./tmp/resume");
 }
-if (!fs.existsSync("./public/profile")) {
-    fs.mkdirSync("./public/profile");
+if (!fs.existsSync("./tmp/profile")) {
+    fs.mkdirSync("./tmp/profile");
 }
 
 const port = process.env.PORT || 4444;
