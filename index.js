@@ -6,7 +6,8 @@ const nodemailer = require('nodemailer');
 const { v4: uuidv4 } = require("uuid");
 var cors = require("cors");
 const fs = require("fs");
-
+const path = require("path");
+const app = express();
 require("dotenv").config()
 // // MongoDsB
 // mongoose
@@ -26,6 +27,8 @@ mongoose
     .then(() => console.log('MongoDB Connected'))
     .catch(err => console.log(err));
 
+app.use("/public", express.static(path.join(__dirname, 'public')));
+
 // initialising directories
 if (!fs.existsSync("./public")) {
     fs.mkdirSync("./public");
@@ -37,7 +40,6 @@ if (!fs.existsSync("./public/profile")) {
     fs.mkdirSync("./public/profile");
 }
 
-const app = express();
 const port = process.env.PORT || 4444;
 
 app.get("/", (req, res) => {
