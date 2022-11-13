@@ -27,7 +27,7 @@ mongoose
     .then(() => console.log('MongoDB Connected'))
     .catch(err => console.log(err));
 
-// app.use("/public", express.static(path.join(__dirname, 'public')));
+app.use("/tmp", express.static(path.join(__dirname, 'tmp')));
 
 // initialising directories
 if (!fs.existsSync("./tmp")) {
