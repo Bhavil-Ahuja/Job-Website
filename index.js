@@ -27,18 +27,18 @@ mongoose
     .then(() => console.log('MongoDB Connected'))
     .catch(err => console.log(err));
 
-app.use("/tmp", express.static(path.join(__dirname, 'tmp')));
+// app.use("/tmp", express.static(path.join(__dirname, 'tmp')));
 
 // initialising directories
-if (!fs.existsSync("./tmp")) {
-    fs.mkdirSync("./tmp");
-}
-if (!fs.existsSync("./tmp/resume")) {
-    fs.mkdirSync("./tmp/resume");
-}
-if (!fs.existsSync("./tmp/profile")) {
-    fs.mkdirSync("./tmp/profile");
-}
+// if (!fs.existsSync("./tmp")) {
+//     fs.mkdirSync("./tmp");
+// }
+// if (!fs.existsSync("./tmp/resume")) {
+//     fs.mkdirSync("./tmp/resume");
+// }
+// if (!fs.existsSync("./tmp/profile")) {
+//     fs.mkdirSync("./tmp/profile");
+// }
 
 const port = process.env.PORT || 4444;
 
